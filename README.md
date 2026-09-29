@@ -1,6 +1,10 @@
 # ESG Reporting Workflow
 
-This project demonstrates a Python-based ESG reporting workflow that automates the process of transforming raw data into structured, analysis-ready outputs.
+This prototype demonstrates a Python-based ESG reporting workflow that transforms mock source data into structured analysis and an Excel report.
+
+![Mock company revenue versus emissions intensity](assets/revenue-vs-emissions-intensity.png)
+
+*Example chart from the mock dataset. It illustrates analysis output, not a real-company finding.*
 
 ## Objective
 
@@ -16,7 +20,7 @@ To illustrate how structured data workflows can improve ESG and financial report
 The workflow follows a structured pipeline:
 
 1. **Data Ingestion**
-   - Pulls ESG data from a live source (Google Sheets)
+   - Reads a published Google Sheet containing mock ESG data
 
 2. **Data Cleaning & Structuring**
    - Converts key fields (Revenue, Costs, Emissions) to numeric formats
@@ -43,13 +47,13 @@ The workflow follows a structured pipeline:
    - Exports structured outputs to Excel
    - Generates multiple reporting sheets
    - Embeds charts and dynamic commentary
-   - Produces repeatable, refreshable reporting outputs
+   - Produces a report from the published mock dataset
 
 ## Key Takeaways
 
 - Data quality validation significantly improves reliability of reporting outputs
 - ESG and financial performance can be analyzed together using structured datasets
-- A repeatable workflow enables rapid refresh of reporting with updated data
+- The same mock source can be reprocessed through the notebook when refreshed
 - Automation reduces manual effort and improves consistency across reporting cycles
 
 ## Tools & Technologies
@@ -58,7 +62,7 @@ The workflow follows a structured pipeline:
 - pandas
 - matplotlib
 - seaborn
-- Google Colab
+- Jupyter Notebook (also works in Colab)
 - Google Sheets
 - xlsxwriter
 
@@ -69,7 +73,16 @@ The workflow follows a structured pipeline:
 
 ## Repository Contents
 
-- `ESG_Reporting_Workflow.ipynb` — Main analysis and workflow notebook
+- [`ESG_Reporting_Mock.ipynb`](ESG_Reporting_Mock.ipynb) — Main analysis and workflow notebook
+
+## Run the example
+
+1. Download or clone this repository and open a terminal in its root directory.
+2. Install dependencies: `pip install pandas numpy matplotlib seaborn xlsxwriter jupyter`.
+3. Start Jupyter with `jupyter notebook`, open [`ESG_Reporting_Mock.ipynb`](ESG_Reporting_Mock.ipynb), and run all cells in order.
+4. The notebook reads a [published mock Google Sheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vRoeeEhPKxDhKLEEkpVVtFTrpfr_uF7_A1AhfB7478rCgogD3JWbgBngXElsDIwZyscSZu-6HgT04qx/pub?output=csv), so an internet connection is required. It writes `ESG_Data_Analysis_Full.xlsx` to the current working directory.
+
+The notebook's commentary and some company-level examples are written for this mock dataset. It is a learning and demonstration project, not a production reporting system or client deliverable. Its calculations should be reviewed before use with another dataset.
 
 ## Next Steps
 
